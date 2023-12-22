@@ -1,0 +1,137 @@
+.footer {
+  background: #0a0808;
+  padding: 70px 0 100px 0;
+  color: var(--light);
+
+  &__flex {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  &__description {
+    margin: 10px 0 20px 0;
+    max-width: 200px;
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  &__socials {
+    &-title {
+      margin: 0;
+      margin-bottom: 10px;
+
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      i {
+        font-size: 25px;
+        cursor: pointer;
+        transition: 0.4s;
+
+        &:hover {
+          color: var(--primary-hover);
+        }
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: start;
+    gap: 50px;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+    }
+
+    &-item {
+      margin: 0;
+      border-bottom: 1px solid transparent;
+      font-size: 12px;
+      line-height: 12px;
+      cursor: pointer;
+      transition: 0.4s;
+
+      &.active {
+        color: var(--white);
+      }
+
+      &:hover {
+        border-color: var(--white);
+      }
+    }
+  }
+}
+
+.newsletter {
+  &__title {
+    margin: 0;
+    margin-bottom: 15px;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &__form {
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__input {
+    width: 100%;
+    max-width: 250px;
+    padding: 17.5px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: var(--white);
+    font-size: 14px;
+    line-height: 14px;
+    transition: 0.5s;
+    outline: 2px solid var(--primary-hover);
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    &:focus {
+      outline-color: var(--primary-hover);
+    }
+  }
+
+  &__btn {
+    height: 100%;
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 15px;
+    font-size: 15px;
+
+    &:hover {
+      filter: drop-shadow(0 0 10px crimson);
+    }
+  }
+}

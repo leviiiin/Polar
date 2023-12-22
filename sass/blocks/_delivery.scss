@@ -1,0 +1,44 @@
+.delivery {
+  padding: 100px 0;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  &__card {
+    padding: 25px;
+    padding-top: 35px;
+    border-radius: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    text-align: center;
+    cursor: pointer;
+
+    &_img {
+      margin-bottom: 25px;
+    }
+
+    &_title {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    &_description {
+      margin: 0;
+      max-width: 200px;
+      color: var(--gray);
+      font-family: "Hind Madurai";
+      font-size: 14px;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    &:hover {
+      box-shadow: 20px 20px 50px 0px rgba(0, 0, 0, 0.05);
+      border-color: transparent;
+      transition: box-shadow 0.5s;
+    }
+  }
+}

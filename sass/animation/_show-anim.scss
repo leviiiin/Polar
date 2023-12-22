@@ -1,0 +1,33 @@
+.anim-el__Y-bottom {
+  opacity: 0;
+  transform: translateY(100%) !important;
+  transition: all 2s;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0%) !important;
+  }
+}
+
+.anim-el__X-left {
+  opacity: 0;
+  transform: translateX(-100px) !important;
+  transition: all 3s;
+
+  &.show {
+    opacity: 1;
+    transform: translateX(0%) !important;
+  }
+}
+
+.anim-el__X-right {
+  opacity: 0;
+  transform: translateX(200px) !important;
+  transition: all 4.5s;
+
+  &.show {
+    opacity: 1;
+    transform: translateX(0%) !important;
+  }
+}
+

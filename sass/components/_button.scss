@@ -1,0 +1,33 @@
+button, .button {
+    padding: 14px 40px;
+    border: 2px solid transparent;
+    background: none;
+    border-radius: 5px;
+    font-family: 'Hind Madurai';
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.button--accent {
+    background: var(--primary);
+    color: var(--white);
+
+    &:hover {
+        background: var(--primary-hover);
+        box-shadow: 7px 7px 10px rgba(128, 128, 128, 0.6);
+    }
+}
+
+.button--ghost {
+    border-color: var(--dark);
+    opacity: 0.5;
+
+    &:hover {
+        color: var(--white);
+        background: var(--primary-hover);
+        border-color: transparent;
+        opacity: 1;
+    }
+}

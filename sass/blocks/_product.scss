@@ -1,0 +1,141 @@
+.product {
+  padding: 110px 0;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    &-item {
+      color: var(--gray);
+      border-bottom: 2px solid transparent;
+      font-family: "Roboto" !important;
+      font-weight: 500 !important;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.4s;
+
+      &:hover {
+        border-color: var(--primary-hover);
+      }
+    }
+
+    &-item.active {
+      color: var(--black);
+      border-color: var(--primary-hover);
+    }
+  }
+
+  &__list {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    border: 2px solid transparent;
+    transition: 1.2s;
+    border-radius: 50px;
+    padding: 10px;
+    
+    &:hover {
+      border-color: var(--primary-hover);
+    }
+
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+
+      .product__item_text {
+        text-align: right;
+      }
+
+      .product__item_price {
+        justify-content: end;
+      }
+
+      .product__item-flex {
+        justify-content: end;
+
+        @media (max-width: 425px) {
+            align-items: start;
+        }
+      }
+    }
+
+    @media (max-width: 1024px) {
+      flex-direction: column !important;
+      border: none;
+
+      &-flex {
+        display: flex;
+        align-items: end;
+        gap: 30px;
+
+        @media (max-width: 425px) {
+          flex-direction: column;
+          gap: 0;
+        }
+      }
+    }
+
+    &_img {
+      max-width: 580px;
+      border-radius: 50px;
+
+      @media (max-width: 1024px) {
+        max-width: 100%;
+      }
+    }
+
+    &_title {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    &_price {
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+      padding-bottom: 15px;
+
+      @media (max-width: 425px) {
+        padding-right: 15px;
+      }
+
+      &-new {
+        font-weight: 500 !important;
+      }
+      &-old {
+        color: var(--gray);
+        font-size: 20px !important;
+        font-weight: 500 !important;
+        text-decoration-line: line-through;
+      }
+    }
+
+    &_description {
+      margin: 0;
+      margin-bottom: 30px;
+      color: var(--gray);
+      max-width: 450px;
+
+      @media (max-width: 425px) {
+        margin: 0;
+      }
+    }
+  }
+}
