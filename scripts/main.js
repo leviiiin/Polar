@@ -52,7 +52,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '19.55',
             priceOld: '22.55',
-            img: '/public/products/ice-cream/brown-bread.png',
+            img: './public/products/ice-cream/brown-bread.png',
         },
 
         product_2: {
@@ -60,7 +60,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '18.99',
             priceOld: '23.99',
-            img: '/public/products/ice-cream/cayenne.png',
+            img: '../public/products/ice-cream/cayenne.png',
         },
 
         product_3: {
@@ -68,7 +68,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '21.00',
             priceOld: '25.00',
-            img: '/public/products/ice-cream/sweet-corn.png',
+            img: '../public/products/ice-cream/sweet-corn.png',
         }
     },
 
