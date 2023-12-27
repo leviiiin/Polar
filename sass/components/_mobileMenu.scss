@@ -1,7 +1,6 @@
 .menu-button {
   display: none;
   z-index: 99;
-  transition: all 0.5s;
 
   #burger {
     font-size: 50px;
@@ -27,8 +26,6 @@
   z-index: 9;
   padding: 20px;
   background: var(--bg);
-  transition: all 0.5s;
-
 
   display: none;
   flex-direction: column;

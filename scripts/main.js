@@ -52,7 +52,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '19.55',
             priceOld: '22.55',
-            img: '../public/products/ice-cream/brown-bread.png',
+            img: './public/products/ice-cream/brown-bread.png',
         },
 
         product_2: {
@@ -60,7 +60,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '18.99',
             priceOld: '23.99',
-            img: '../public/products/ice-cream/cayenne.png',
+            img: './public/products/ice-cream/cayenne.png',
         },
 
         product_3: {
@@ -68,7 +68,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '21.00',
             priceOld: '25.00',
-            img: '../public/products/ice-cream/sweet-corn.png',
+            img: './public/products/ice-cream/sweet-corn.png',
         }
     },
 
@@ -79,7 +79,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '3.55',
             priceOld: '5.55',
-            img: '../public/products/chocolate/milk-chocolate.webp',
+            img: './public/products/chocolate/milk-chocolate.webp',
         },
 
         product_2: {
@@ -87,7 +87,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '2.99',
             priceOld: '4.99',
-            img: '../public/products/chocolate/nuts.webp',
+            img: './public/products/chocolate/nuts.webp',
         },
 
         product_3: {
@@ -95,7 +95,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '3.00',
             priceOld: '6.00',
-            img: '../public/products/chocolate/crunch.webp',
+            img: './public/products/chocolate/crunch.webp',
         }
     },
 
@@ -106,7 +106,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '15.55',
             priceOld: '17.55',
-            img: '../public/products/cake/queenOfSpades.jpg',
+            img: './public/products/cake/queenOfSpades.jpg',
         },
 
         product_2: {
@@ -114,7 +114,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '20.99',
             priceOld: '24.99',
-            img: '../public/products/cake/queenOfSpades.jpg',
+            img: './public/products/cake/queenOfSpades.jpg',
         },
 
         product_3: {
@@ -122,7 +122,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '20.00',
             priceOld: '22.00',
-            img: '../public/products/cake/queenOfSpades.jpg',
+            img: './public/products/cake/queenOfSpades.jpg',
         }
     },
 
@@ -133,7 +133,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '15.55',
             priceOld: '17.55',
-            img: '../public/products/candy/beanBoozledRoulette.jpg',
+            img: './public/products/candy/beanBoozledRoulette.jpg',
         },
 
         product_2: {
@@ -141,7 +141,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '20.99',
             priceOld: '24.99',
-            img: '../public/products/candy/beenBoozled.jpg',
+            img: './public/products/candy/beenBoozled.jpg',
         },
 
         product_3: {
@@ -149,7 +149,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '20.00',
             priceOld: '22.00',
-            img: '../public/products/candy/harryPotter.jpg',
+            img: './public/products/candy/harryPotter.jpg',
         }
     },
 
@@ -160,7 +160,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '15.55',
             priceOld: '17.55',
-            img: '../public/products/platters/pletters1.webp',
+            img: './public/products/platters/pletters1.webp',
         },
 
         product_2: {
@@ -168,7 +168,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '20.99',
             priceOld: '24.99',
-            img: '../public/products/platters/pletters2.webp',
+            img: './public/products/platters/pletters2.webp',
         },
 
         product_3: {
@@ -176,7 +176,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '20.00',
             priceOld: '22.00',
-            img: '../public/products/platters/pletters3.webp',
+            img: './public/products/platters/pletters3.webp',
         }
     },
 
@@ -187,7 +187,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '15.55',
             priceOld: '17.55',
-            img: '../public/products/dessert/dessert1.jpg',
+            img: './public/products/dessert/dessert1.jpg',
         },
 
         product_2: {
@@ -195,7 +195,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '20.99',
             priceOld: '24.99',
-            img: '../public/products/dessert/dessert2.jpg',
+            img: './public/products/dessert/dessert2.jpg',
         },
 
         product_3: {
@@ -203,7 +203,7 @@ const CategoryData = {
             description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
             priceNew: '20.00',
             priceOld: '22.00',
-            img: '../public/products/dessert/dessert1.jpg',
+            img: './public/products/dessert/dessert1.jpg',
         }
     },
 }

@@ -37,7 +37,6 @@ button, .button {
 .menu-button {
   display: none;
   z-index: 99;
-  transition: all 0.5s;
 }
 .menu-button #burger {
   font-size: 50px;
@@ -62,7 +61,6 @@ button, .button {
   z-index: 9;
   padding: 20px;
   background: var(--bg);
-  transition: all 0.5s;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -377,6 +375,7 @@ button, .button {
 @media (max-width: 425px) {
   .product__item_price {
     padding-right: 15px;
+    padding-top: 10px;
   }
 }
 .product__item_price-new {
@@ -455,6 +454,11 @@ button, .button {
 .app__img {
   border-radius: 33px;
 }
+@media (max-width: 425px) {
+  .app__img {
+    max-width: 80%;
+  }
+}
 .app__links {
   padding-top: 40px;
   display: flex;
@@ -479,7 +483,7 @@ button, .button {
 }
 @media (max-width: 425px) {
   .app__link-btn {
-    width: 250px;
+    width: 200px;
   }
 }
 .app__link-btn:hover {
@@ -488,7 +492,7 @@ button, .button {
 
 @media (max-width: 425px) {
   .googlePlay {
-    width: 285px;
+    width: 228px;
   }
 }
 
@@ -693,6 +697,11 @@ button, .button {
   transform: translateX(-100px) !important;
   transition: all 3s;
 }
+@media (max-width: 425px) {
+  .anim-el__X-left {
+    transform: translateX(-40px) !important;
+  }
+}
 .anim-el__X-left.show {
   opacity: 1;
   transform: translateX(0%) !important;
@@ -702,6 +711,16 @@ button, .button {
   opacity: 0;
   transform: translateX(200px) !important;
   transition: all 4.5s;
+}
+@media (max-width: 1024px) {
+  .anim-el__X-right {
+    transform: translateX(100px) !important;
+  }
+}
+@media (max-width: 425px) {
+  .anim-el__X-right {
+    transform: translateX(50px) !important;
+  }
 }
 .anim-el__X-right.show {
   opacity: 1;
@@ -718,6 +737,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  overflow-x: hidden;
 }
 
 .container {
