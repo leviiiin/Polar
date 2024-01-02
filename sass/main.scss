@@ -21,8 +21,9 @@
 @import './blocks/question';
 @import './blocks/footer';
 
+// animation
 @import './animation/show-anim';
-
+@import './animation/preloader';
 
 body {
     margin: 0;

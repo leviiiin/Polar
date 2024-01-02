@@ -25,11 +25,10 @@
                     <i class="bi bi-list" id="burger"></i>
                     <i class="bi bi-x-lg" id="menu-close"></i>
                 </div>
-                <button class="button--accent header__button">Buy Now</button>
+                <a href="" class="button button--accent header__button">Buy Now</a>
             </div>
         </div>
     </header>
-
 
     <main>
         <section class="hero">
@@ -44,7 +43,7 @@
                             Some food has looked so awful that it's looked like something that the dog's brought home,
                             yet after one mouthful I've been left eating my thoughts, my words.
                         </p>
-                        <button class="button--accent">Buy Now</button>
+                        <a href="" class="button button--accent">Buy Now</a>
                     </div>
                     <img src="./public/hero-img.png" alt="img" class="hero__img">
                 </div>
@@ -103,19 +102,7 @@
             <div class="container">
                 <div class="product__container">
                     <h2 class="product__title">Our Product</h2>
-                    <div class="product__nav">
-                        <span class="h5 product__nav-item active" data-category="ice_cream"
-                            onclick="productActive(this)">ice cream</span>
-                        <span class="h5 product__nav-item" data-category="chocolate"
-                            onclick="productActive(this)">chocolate</span>
-                        <span class="h5 product__nav-item" data-category="cake"
-                            onclick="productActive(this)">cake</span>
-                        <span class="h5 product__nav-item" data-category="candy"
-                            onclick="productActive(this)">candy</span>
-                        <span class="h5 product__nav-item" data-category="platters"
-                            onclick="productActive(this)">platters</span>
-                        <span class="h5 product__nav-item" data-category="dessert"
-                            onclick="productActive(this)">dessert</span>
+                    <div class="product__nav" id="productNav">
                     </div>
                     <div class="product__list" id="productList">
                     </div>
@@ -147,8 +134,12 @@
                             </li>
                         </ul>
                         <div class="app__links anim-el__Y-bottom">
-                            <img src="./public/app/googlePlay.png" class="app__link-btn googlePlay" alt="img">
-                            <img src="./public/app/appStore.png" class="app__link-btn" alt="img">
+                            <a href="">
+                                <img src="./public/app/googlePlay.png" class="app__link-btn googlePlay" alt="img">
+                            </a>
+                            <a href="">
+                                <img src="./public/app/appStore.png" class="app__link-btn" alt="img">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -158,10 +149,11 @@
             <div class="container">
                 <div class="question__content">
                     <h2 class="question__title">Have Question in Mind? Let us help you</h2>
-                    <form class="question__form">
-                        <input type="text" class="question__input" placeholder="Enter your question">
-                        <button class="button--accent question__btn">Send</button>
+                    <form class="question__form" onsubmit="return validateQuestionForm(event)" novalidate>
+                        <input type="text" id="questionInput" class="question__input" placeholder="Enter your question">
+                        <button type="submit" class="button--accent question__btn">Send</button>
                     </form>
+                    <span class="question__incorrectQuestion" id="incorrectQuestion"></span>
                 </div>
             </div>
         </section>
@@ -182,48 +174,54 @@
                         <div class="footer__socials">
                             <p class="footer__socials-title">Follow Us</p>
                             <div class="footer__socials-list">
-                                <i class="bi bi-facebook"></i>
-                                <i class="bi bi-twitter"></i>
-                                <i class="bi bi-instagram"></i>
-                                <i class="bi bi-linkedin"></i>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
 
                     <div class="footer__col footer__nav">
                         <div class="footer__nav-list">
-                            <p class="footer__nav-item active">Home</p>
-                            <p class="footer__nav-item">Product</p>
-                            <p class="footer__nav-item">Blog</p>
-                            <p class="footer__nav-item">Pricing</p>
-                            <p class="footer__nav-item">Testimonials</p>
-                            <p class="footer__nav-item">Contact Us</p>
+                            <a class="footer__nav-item active">Home</a>
+                            <a class="footer__nav-item">Product</a>
+                            <a class="footer__nav-item">Blog</a>
+                            <a class="footer__nav-item">Pricing</a>
+                            <a class="footer__nav-item">Testimonials</a>
+                            <a class="footer__nav-item">Contact Us</a>
                         </div>
 
                         <div class="footer__nav-list">
-                            <p class="footer__nav-item">Delivery Information</p>
-                            <p class="footer__nav-item">Privacy Policy</p>
-                            <p class="footer__nav-item">Terms & Condition</p>
-                            <p class="footer__nav-item">Search Tems</p>
-                            <p class="footer__nav-item">Order & Return</p>
+                            <a class="footer__nav-item">Delivery Information</a>
+                            <a class="footer__nav-item">Privacy Policy</a>
+                            <a class="footer__nav-item">Terms & Condition</a>
+                            <a class="footer__nav-item">Search Tems</a>
+                            <a class="footer__nav-item">Order & Return</a>
                         </div>
                     </div>
 
                     <div class="footer__col">
+
                         <div class="newsletter">
                             <p class="newsletter__title">Newsletter</p>
-                            <form class="newsletter__form">
-                                <input type="email" class="newsletter__input" placeholder="Your Email">
-                                <button class="button--accent newsletter__btn">Subscribe</button>
+                            <form class="newsletter__form" onsubmit="return validateEmailForm(event)" novalidate>
+                                <input id="inputEmail" type="email" class="newsletter__input" placeholder="Your Email">
+                                <button type="submit" class="button--accent newsletter__btn">Subscribe</button>
                             </form>
+                            <span class="newsletter__incorrectEmail" id="incorrectEmail"></span>
+                            <div class="newsletter__correctEmail" id="correctEmail">
+                                <p class="newsletter__correctEmail-title">You have successfully subscribed</p>
+                                <i class="bi bi-x newsletter__correctEmail-close" id="correctEmailClose"></i>
+                            </div>
                         </div>
+
                     </div>
 
                 </div>
             </div>
         </div>
     </footer>
-
 
     <div id="mobile-menu" class="mobile-menu">
         <a class="mobile-menu_item active" href="#">Home</a>
@@ -232,7 +230,6 @@
         <a class="mobile-menu_item" href="#">Testimonials</a>
         <a class="mobile-menu_item" href="#">Contact Us</a>
     </div>
-
 
     <script src="./scripts/main.js"></script>
 </body>

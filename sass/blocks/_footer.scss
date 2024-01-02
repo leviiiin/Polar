@@ -81,6 +81,8 @@
 }
 
 .newsletter {
+  position: relative;
+
   &__title {
     margin: 0;
     margin-bottom: 15px;
@@ -94,12 +96,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
   }
 
   &__input {
     width: 100%;
     max-width: 250px;
-    padding: 17.5px;
+    padding: 18px;
     background: transparent;
     border: none;
     border-radius: 0;
@@ -131,7 +134,39 @@
     font-size: 15px;
 
     &:hover {
-      filter: drop-shadow(0 0 10px crimson);
+      box-shadow: none;
+    }
+  }
+
+  &__incorrectEmail {
+    font-size: 16px;
+    color: var(--primary-hover);
+  }
+
+  &__correctEmail {
+    position: relative;
+    position: absolute;
+    top: -55px;
+    left: -30px;
+    right: 0;
+    width: 100%;
+    z-index: 9;
+    padding: 10px 50px 10px 20px;
+    border-radius: 5px;
+    background: #c8f8e4;
+    color: #1dc37e;
+    display: none;
+
+    &-title {
+      font-size: 20px;
+      width: 100%;
+    }
+    &-close {
+      position: absolute;
+      top: 5px;
+      right: 3px;
+      font-size: 35px;
+      cursor: pointer;
     }
   }
 }
