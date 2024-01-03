@@ -300,8 +300,8 @@ button, .button {
   border-color: var(--primary-hover);
 }
 .product__list {
-  padding-top: 50px;
   display: flex;
+  padding-top: 50px;
   flex-direction: column;
   gap: 30px;
 }
@@ -793,12 +793,22 @@ button, .button {
   transform: translateX(0%) !important;
 }
 
-svg {
-  width: 100%;
-  height: 100%;
+.loader-container {
+  position: relative;
+  padding: 400px 0;
+  display: none;
 }
-
-.preloader {
+@media (max-width: 768px) {
+  .loader-container {
+    padding: 300px 0;
+  }
+}
+@media (max-width: 425px) {
+  .loader-container {
+    padding: 200px 0;
+  }
+}
+.loader-container__spinner {
   position: absolute;
   width: 102px;
   height: 102px;
@@ -807,19 +817,9 @@ svg {
   min-height: 102px;
   transform: translateX(-50%) translateY(-50%);
 }
-.preloader__container {
-  position: relative;
-  padding: 400px 0;
-}
-@media (max-width: 768px) {
-  .preloader__container {
-    padding: 300px 0;
-  }
-}
-@media (max-width: 425px) {
-  .preloader__container {
-    padding: 200px 0;
-  }
+
+.is-loading {
+  display: block !important;
 }
 
 .small-circle {

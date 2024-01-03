@@ -253,36 +253,45 @@ const navItems = document.querySelectorAll('.product__nav-item');
 let currentCategory = 'ice_cream';
 
 
-function changeActiveCategory(clickedElement) {
-    const spanElement = document.querySelector(`[data-category="${clickedElement}"]`);
+function changeActiveCategory(event) {
+    const clickedElement = event.target;
+    const category = clickedElement.dataset.category;
 
-    if (spanElement && !spanElement.classList.contains('active')) {
+    if (!clickedElement.classList.contains('active')) {
         const activeElement = document.querySelector('.product__nav-item.active');
 
         if (activeElement) {
             activeElement.classList.remove('active');
         }
 
-        spanElement.classList.add('active');
-        currentCategory = clickedElement;
+        clickedElement.classList.add('active');
+        currentCategory = category;
         displayProducts();
     }
 }
 
-function displayCategories() {
-    productCategories.forEach((category) => {
-        const isActive = category.id === 'ice_cream';
 
-        productNav.innerHTML += `
-            <span 
-                class="h5 product__nav-item ${isActive ? 'active' : ''}" 
-                data-category=${category.id}
-                onclick="changeActiveCategory('${category.id}')"
-            >${category.name}
-            </span>
-        `;
+function displayCategories() {
+    const fragment = document.createDocumentFragment();
+
+    productCategories.forEach((category, index) => {
+        const categorySpan = document.createElement('span');
+        categorySpan.classList.add('h5', 'product__nav-item');
+
+        if (index === 0) {
+            categorySpan.classList.add('active')
+        }
+
+        categorySpan.dataset.category = category.id;
+        categorySpan.textContent = category.name;
+        categorySpan.addEventListener('click', changeActiveCategory);
+
+        fragment.appendChild(categorySpan);
     });
+
+    productNav.appendChild(fragment);
 }
+
 
 async function getProductsByCategory(currentCategory) {
 
@@ -296,44 +305,42 @@ async function getProductsByCategory(currentCategory) {
     }
 }
 
+
 async function displayProducts() {
     try {
+
+        const loaderContainer = document.getElementById('loaderContainer');
+        loaderContainer.classList.add('is-loading');
+
+
         const selectedProducts = await getProductsByCategory(currentCategory);
-
-        productInHTML = `
-            <div class="preloader__container">
-                <div class="preloader">
-                    <svg viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path class="big-circle" d="M101 51C101 78.6142 78.6142 101 51 101C23.3858 101 1 78.6142 1 51" stroke="red" stroke-width="2"/>
-                        <path class="small-circle" d="M91 51C91 28.9086 73.0914 11 51 11C28.9086 11 11 28.9086 11 51" stroke="red" stroke-width="2"/>
-                    </svg>
-                </div>
-            </div>
-        `;
-
-        productList.innerHTML = productInHTML;
+        productList.innerHTML = '';
 
         await wait(2000);
 
+        loaderContainer.classList.remove('is-loading');
+
         productInHTML = selectedProducts.map(product => `
-            <div class="product__item">
-                <img src="${product.img}" alt="img" class="product__item_img">
-                <div class="product__item_text">
-                    <h3 class="product__item_title">${product.title}</h3>
-                    <p class="product__item_description">${product.description}</p>
-                    <div class="product__item-flex">
-                        <div class="product__item_price">
-                            <span class="h3 product__item_price-new">$${product.priceNew}</span>
-                            <span class="h3 product__item_price-old">${product.priceOld ? `$${product.priceOld}` : ''}</span>
+                <div class="product__item">
+                    <img src="${product.img}" alt="img" class="product__item_img">
+                    <div class="product__item_text">
+                        <h3 class="product__item_title">${product.title}</h3>
+                        <p class="product__item_description">${product.description}</p>
+                        <div class="product__item-flex">
+                            <div class="product__item_price">
+                                <span class="h3 product__item_price-new">$${product.priceNew}</span>
+                                <span class="h3 product__item_price-old">${product.priceOld ? `$${product.priceOld}` : ''}</span>
+                            </div>
+                            <a href="" class="button button--accent">Buy Now</a>
                         </div>
-                        <a href="" class="button button--accent">Buy Now</a>
                     </div>
                 </div>
-            </div>
         `).join('');
 
         productList.innerHTML = productInHTML;
     } catch (error) {
+
+        loaderContainer.classList.remove('is-loading');
         productInHTML = `
             <div class="product__list-error">
                 <span class="h1 product__list-error_type">404 Not Found</span>
@@ -343,8 +350,9 @@ async function displayProducts() {
             </div>
         `
         productList.innerHTML = productInHTML;
-        console.error(error.message);
+        console.error(error);
     }
+
 }
 
 displayCategories();
@@ -376,7 +384,7 @@ function validateEmailForm(event) {
 
     if (!validEmailAddress(emailValue)) {
         incorrectEmail.innerText = 'Please enter a valid email address.';
-        return false; 
+        return false;
     }
 
     emailInput.value = '';
@@ -385,7 +393,7 @@ function validateEmailForm(event) {
     correctEmailClose.addEventListener('click', function () {
         correctEmail.style.display = 'none';
     })
-    return true; 
+    return true;
 }
 
 // _________________________Question_Validation___________________________________
@@ -397,7 +405,7 @@ async function validateQuestionForm(event) {
     const incorrectQuestion = document.getElementById('incorrectQuestion');
     const questionValue = questionInput.value.trim()
 
-    if(!questionValue) {
+    if (!questionValue) {
         incorrectQuestion.innerText = 'Please fill out all required fields.';
         return false;
     }
@@ -408,7 +416,7 @@ async function validateQuestionForm(event) {
     await wait(2500);
     incorrectQuestion.innerText = '';
     incorrectQuestion.style.color = 'var(--primary-hover)'
-    
-    
+
+
     return true;
 }
