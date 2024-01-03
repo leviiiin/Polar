@@ -101,10 +101,10 @@
         <section class="product">
             <div class="container">
                 <div class="product__container">
-                    <h2 class="product__title">Our Product</h2>
-                    <div class="product__nav" id="productNav">
-                    </div>
-                    <div class="product__list" id="productList">
+                    <h2 class="product__title">Our Products</h2>
+                    <div id="productsModule">
+                        <div class="product__list" id="productList">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -203,18 +203,19 @@
 
                     <div class="footer__col">
 
-                        <div class="newsletter">
+                        <form id="newsletterForm" class="newsletter">
                             <p class="newsletter__title">Newsletter</p>
-                            <form class="newsletter__form" onsubmit="return validateEmailForm(event)" novalidate>
+                            <div class="newsletter__form">
                                 <input id="inputEmail" type="email" class="newsletter__input" placeholder="Your Email">
                                 <button type="submit" class="button--accent newsletter__btn">Subscribe</button>
-                            </form>
+                            </div>
                             <span class="newsletter__incorrectEmail" id="incorrectEmail"></span>
-                            <div class="newsletter__correctEmail" id="correctEmail">
+<!--                            TODO: Toast message-->
+                            <!--<div class="newsletter__correctEmail" id="correctEmail">
                                 <p class="newsletter__correctEmail-title">You have successfully subscribed</p>
                                 <i class="bi bi-x newsletter__correctEmail-close" id="correctEmailClose"></i>
-                            </div>
-                        </div>
+                            </div>-->
+                        </form>
 
                     </div>
 
