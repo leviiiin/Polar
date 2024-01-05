@@ -268,22 +268,22 @@ button, .button {
   }
 }
 
-.product {
+.products {
   padding: 110px 0;
 }
-.product__title {
+.products__title {
   margin: 0;
   margin-bottom: 60px;
   text-align: center;
 }
-.product__nav {
+.products__nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 40px;
 }
-.product__nav-item {
+.products__nav-item {
   color: var(--gray);
   border-bottom: 3px solid transparent;
   font-family: "Roboto" !important;
@@ -292,20 +292,20 @@ button, .button {
   cursor: pointer;
   transition: 0.5s;
 }
-.product__nav-item:hover {
+.products__nav-item:hover {
   border-color: var(--primary-hover);
 }
-.product__nav-item.active {
+.products__nav-item.active {
   color: var(--black);
   border-color: var(--primary-hover);
 }
-.product__list {
+.products__list {
   display: flex;
   padding-top: 50px;
   flex-direction: column;
   gap: 30px;
 }
-.product__list-error {
+.products__list-error {
   margin: 200px 0;
   background: var(--white);
   display: flex;
@@ -313,14 +313,14 @@ button, .button {
   align-items: center;
   justify-content: center;
 }
-.product__list-error_type {
+.products__list-error_type {
   color: var(--primary-hover);
   margin-bottom: 20px;
 }
-.product__list-error_title {
+.products__list-error_title {
   font-size: 20px;
 }
-.product__item {
+.products__item {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -331,85 +331,85 @@ button, .button {
   border-radius: 50px;
   padding: 10px;
 }
-.product__item:hover {
+.products__item:hover {
   border-color: var(--primary-hover);
 }
-.product__item:nth-child(2n) {
+.products__item:nth-child(2n) {
   flex-direction: row-reverse;
 }
-.product__item:nth-child(2n) .product__item_text {
+.products__item:nth-child(2n) .products__item_text {
   text-align: right;
 }
-.product__item:nth-child(2n) .product__item_price {
+.products__item:nth-child(2n) .products__item_price {
   justify-content: end;
 }
-.product__item:nth-child(2n) .product__item-flex {
+.products__item:nth-child(2n) .products__item-flex {
   justify-content: end;
 }
 @media (max-width: 425px) {
-  .product__item:nth-child(2n) .product__item-flex {
+  .products__item:nth-child(2n) .products__item-flex {
     align-items: start;
   }
 }
 @media (max-width: 1024px) {
-  .product__item {
+  .products__item {
     flex-direction: column !important;
     border: none;
   }
-  .product__item-flex {
+  .products__item-flex {
     display: flex;
     align-items: end;
     gap: 30px;
   }
 }
 @media (max-width: 1024px) and (max-width: 425px) {
-  .product__item-flex {
+  .products__item-flex {
     flex-direction: column;
     gap: 0;
   }
 }
-.product__item_img {
+.products__item_img {
   max-width: 580px;
   border-radius: 50px;
 }
 @media (max-width: 1024px) {
-  .product__item_img {
+  .products__item_img {
     max-width: 100%;
   }
 }
-.product__item_title {
+.products__item_title {
   margin: 0;
   margin-bottom: 10px;
 }
-.product__item_price {
+.products__item_price {
   display: flex;
   align-items: baseline;
   gap: 7px;
   padding-bottom: 15px;
 }
 @media (max-width: 425px) {
-  .product__item_price {
+  .products__item_price {
     padding-right: 15px;
     padding-top: 10px;
   }
 }
-.product__item_price-new {
+.products__item_price-new {
   font-weight: 500 !important;
 }
-.product__item_price-old {
+.products__item_price-old {
   color: var(--gray);
   font-size: 20px !important;
   font-weight: 500 !important;
   text-decoration-line: line-through;
 }
-.product__item_description {
+.products__item_description {
   margin: 0;
   margin-bottom: 30px;
   color: var(--gray);
   max-width: 450px;
 }
 @media (max-width: 425px) {
-  .product__item_description {
+  .products__item_description {
     margin: 0;
   }
 }
@@ -662,10 +662,8 @@ button, .button {
   border-color: var(--white);
 }
 
-.newsletter {
-  position: relative;
-}
 .newsletter__title {
+  text-align: center;
   margin: 0;
   margin-bottom: 15px;
   color: var(--white);
@@ -673,16 +671,12 @@ button, .button {
   font-weight: 500;
 }
 .newsletter__form {
-  height: 55px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
+  position: relative;
 }
 .newsletter__input {
   width: 100%;
   max-width: 250px;
-  padding: 18px;
+  padding: 15px;
   background: transparent;
   border: none;
   border-radius: 0;
@@ -746,6 +740,11 @@ button, .button {
   right: 3px;
   font-size: 35px;
   cursor: pointer;
+}
+.newsletter__inputContainer {
+  display: flex;
+  align-items: start;
+  margin-bottom: 5px;
 }
 
 .anim-el__Y-bottom {

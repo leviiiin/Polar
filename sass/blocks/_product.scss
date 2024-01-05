@@ -1,4 +1,4 @@
-.product {
+.products {
   padding: 110px 0;
 
   &__title {
@@ -77,15 +77,15 @@
     &:nth-child(2n) {
       flex-direction: row-reverse;
 
-      .product__item_text {
+      .products__item_text {
         text-align: right;
       }
 
-      .product__item_price {
+      .products__item_price {
         justify-content: end;
       }
 
-      .product__item-flex {
+      .products__item-flex {
         justify-content: end;
 
         @media (max-width: 425px) {

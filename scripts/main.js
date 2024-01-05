@@ -1,3 +1,17 @@
+// Helpers
+
+function wait(ms) {
+    if (ms > 0) {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve();
+            }, ms);
+        });
+    } else {
+        throw new Error('ms must be a number')
+    }
+}
+
 // ____________________Mobile_menu________________________________________
 
 const menu = document.getElementById('menu')
@@ -17,39 +31,22 @@ closeMenu.addEventListener('click', function () {
     closeMenu.style.display = 'none';
 })
 
-
-
 // ______________________________Card_animation___________________________________
 
-function onEntry(entry) {
+function onAnimationElementEntry(entry) {
     entry.forEach(change => {
         if (change.isIntersecting) {
             change.target.classList.add('show');
         }
     });
 }
-let options = { threshold: [0.7] };
-let observer = new IntersectionObserver(onEntry, options);
-let elements = document.querySelectorAll('[class*=anim-el_]');
-for (let elm of elements) {
-    observer.observe(elm);
+let animationObserver = new IntersectionObserver(onAnimationElementEntry, { threshold: [0.7] });
+let animationElements = document.querySelectorAll('[class*=anim-el_]');
+for (let elm of animationElements) {
+    animationObserver.observe(elm);
 }
-
-
 
 // _________________________Product_Generation___________________________________
-
-function wait(ms) {
-    if (ms > 0) {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve();
-            }, ms);
-        });
-    } else {
-        throw new Error('ms must be a number')
-    }
-}
 
 const products = [
     {
@@ -57,7 +54,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '19.55',
         priceOld: '22.55',
-        img: './public/products/ice-cream/brown-bread.png',
+        img: './public/images/products-img/ice-cream/brown-bread.png',
         category: 'ice_cream'
     },
     {
@@ -65,7 +62,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '18.99',
         priceOld: '23.99',
-        img: './public/products/ice-cream/cayenne.png',
+        img: './public/images/products-img/ice-cream/cayenne.png',
         category: 'ice_cream'
     },
     {
@@ -73,7 +70,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '21.00',
         priceOld: '',
-        img: './public/products/ice-cream/sweet-corn.png',
+        img: './public/images/products-img/ice-cream/sweet-corn.png',
         category: 'ice_cream'
     },
 
@@ -84,7 +81,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '3.55',
         priceOld: '5.55',
-        img: './public/products/chocolate/milk-chocolate.webp',
+        img: './public/images/products-img/chocolate/milk-chocolate.webp',
         category: 'chocolate'
     },
     {
@@ -92,7 +89,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '2.99',
         priceOld: '4.99',
-        img: './public/products/chocolate/nuts.webp',
+        img: './public/images/products-img/chocolate/nuts.webp',
         category: 'chocolate'
     },
     {
@@ -100,7 +97,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '3.00',
         priceOld: '6.00',
-        img: './public/products/chocolate/crunch.webp',
+        img: './public/images/products-img/chocolate/crunch.webp',
         category: 'chocolate'
     },
 
@@ -111,7 +108,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '15.55',
         priceOld: '17.55',
-        img: './public/products/cake/queenOfSpades.jpg',
+        img: './public/images/products-img/cake/queenOfSpades.jpg',
         category: 'cake',
     },
     {
@@ -119,7 +116,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '20.99',
         priceOld: '24.99',
-        img: './public/products/cake/queenOfSpades.jpg',
+        img: './public/images/products-img/cake/queenOfSpades.jpg',
         category: 'cake',
     },
     {
@@ -127,7 +124,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '20.00',
         priceOld: '22.00',
-        img: './public/products/cake/queenOfSpades.jpg',
+        img: './public/images/products-img/cake/queenOfSpades.jpg',
         category: 'cake',
     },
 
@@ -138,7 +135,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '15.55',
         priceOld: '17.55',
-        img: './public/products/candy/beanBoozledRoulette.jpg',
+        img: './public/images/products-img/candy/beanBoozledRoulette.jpg',
         category: 'candy',
     },
     {
@@ -146,7 +143,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '20.99',
         priceOld: '24.99',
-        img: './public/products/candy/beenBoozled.jpg',
+        img: './public/images/products-img/candy/beenBoozled.jpg',
         category: 'candy',
     },
     {
@@ -154,7 +151,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '20.00',
         priceOld: '22.00',
-        img: './public/products/candy/harryPotter.jpg',
+        img: './public/images/products-img/candy/harryPotter.jpg',
         category: 'candy',
     },
 
@@ -165,7 +162,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '15.55',
         priceOld: '17.55',
-        img: './public/products/platters/pletters1.webp',
+        img: './public/images/products-img/platters/pletters1.webp',
         category: 'platters',
     },
     {
@@ -173,7 +170,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '20.99',
         priceOld: '24.99',
-        img: './public/products/platters/pletters2.webp',
+        img: './public/images/products-img/platters/pletters2.webp',
         category: 'platters',
     },
     {
@@ -181,7 +178,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '20.00',
         priceOld: '22.00',
-        img: './public/products/platters/pletters3.webp',
+        img: './public/images/products-img/platters/pletters3.webp',
         category: 'platters',
     },
 
@@ -192,7 +189,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '15.55',
         priceOld: '17.55',
-        img: './public/products/dessert/dessert1.jpg',
+        img: './public/images/products-img/dessert/dessert1.jpg',
         category: 'dessert'
     },
     {
@@ -200,7 +197,7 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '20.99',
         priceOld: '24.99',
-        img: './public/products/dessert/dessert1.jpg',
+        img: './public/images/products-img/dessert/dessert1.jpg',
         category: 'dessert'
     },
     {
@@ -208,12 +205,12 @@ const products = [
         description: 'Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.Bon Au Pain is a pioneer in the healthy fast food scene.',
         priceNew: '20.00',
         priceOld: '22.00',
-        img: './public/products/dessert/dessert1.jpg',
+        img: './public/images/products-img/dessert/dessert1.jpg',
         category: 'dessert'
     }
 ]
 
-const productCategories = [
+const productsCategories = [
 
     {
         name: 'Ice Cream',
@@ -247,18 +244,17 @@ const productCategories = [
     },
 ]
 
-const productList = document.getElementById('productList');
-const productNav = document.getElementById('productNav')
-const navItems = document.querySelectorAll('.product__nav-item');
+const productsList = document.getElementById('productsList');
+const productsNav = document.getElementById('productsNav')
+const navItems = document.querySelectorAll('.products__nav-item');
 let currentCategory = 'ice_cream';
-
 
 function changeActiveCategory(event) {
     const clickedElement = event.target;
     const category = clickedElement.dataset.category;
 
     if (!clickedElement.classList.contains('active')) {
-        const activeElement = document.querySelector('.product__nav-item.active');
+        const activeElement = document.querySelector('.products__nav-item.active');
 
         if (activeElement) {
             activeElement.classList.remove('active');
@@ -270,13 +266,23 @@ function changeActiveCategory(event) {
     }
 }
 
+async function getProductsByCategory(currentCategory) {
+
+    const isCategoryValid = products.some(product => product.category === currentCategory);
+
+    if (isCategoryValid) {
+        return products.filter(product => product.category === currentCategory);
+    } else {
+        return new Error(`Category '${currentCategory}' not found!`);
+    }
+}
 
 function displayCategories() {
     const fragment = document.createDocumentFragment();
 
-    productCategories.forEach((category, index) => {
+    productsCategories.forEach((category, index) => {
         const categorySpan = document.createElement('span');
-        categorySpan.classList.add('h5', 'product__nav-item');
+        categorySpan.classList.add('h5', 'products__nav-item');
 
         if (index === 0) {
             categorySpan.classList.add('active')
@@ -289,22 +295,8 @@ function displayCategories() {
         fragment.appendChild(categorySpan);
     });
 
-    productNav.appendChild(fragment);
+    productsNav.appendChild(fragment);
 }
-
-
-async function getProductsByCategory(currentCategory) {
-
-    const isCategoryValid = products.some(product => product.category === currentCategory);
-
-    if (isCategoryValid) {
-        const selectedProducts = products.filter(product => product.category === currentCategory);
-        return selectedProducts;
-    } else {
-        return new Error(`Category '${currentCategory}' not found!`);
-    }
-}
-
 
 async function displayProducts() {
     try {
@@ -312,24 +304,23 @@ async function displayProducts() {
         const loaderContainer = document.getElementById('loaderContainer');
         loaderContainer.classList.add('is-loading');
 
-
         const selectedProducts = await getProductsByCategory(currentCategory);
-        productList.innerHTML = '';
+        productsList.innerHTML = '';
 
         await wait(2000);
 
         loaderContainer.classList.remove('is-loading');
 
-        productInHTML = selectedProducts.map(product => `
-                <div class="product__item">
-                    <img src="${product.img}" alt="img" class="product__item_img">
-                    <div class="product__item_text">
-                        <h3 class="product__item_title">${product.title}</h3>
-                        <p class="product__item_description">${product.description}</p>
-                        <div class="product__item-flex">
-                            <div class="product__item_price">
-                                <span class="h3 product__item_price-new">$${product.priceNew}</span>
-                                <span class="h3 product__item_price-old">${product.priceOld ? `$${product.priceOld}` : ''}</span>
+        productsInHTML = selectedProducts.map(product => `
+                <div class="products__item">
+                    <img src="${product.img}" alt="img" class="products__item_img">
+                    <div class="products__item_text">
+                        <h3 class="products__item_title">${product.title}</h3>
+                        <p class="products__item_description">${product.description}</p>
+                        <div class="products__item-flex">
+                            <div class="products__item_price">
+                                <span class="h3 products__item_price-new">$${product.priceNew}</span>
+                                <span class="h3 products__item_price-old">${product.priceOld ? `$${product.priceOld}` : ''}</span>
                             </div>
                             <a href="" class="button button--accent">Buy Now</a>
                         </div>
@@ -337,19 +328,19 @@ async function displayProducts() {
                 </div>
         `).join('');
 
-        productList.innerHTML = productInHTML;
+        productsList.innerHTML = productsInHTML;
     } catch (error) {
 
         loaderContainer.classList.remove('is-loading');
-        productInHTML = `
-            <div class="product__list-error">
-                <span class="h1 product__list-error_type">404 Not Found</span>
-                <span class="product__list-error_title">
+        productsInHTML = `
+            <div class="products__list-error">
+                <span class="h1 products__list-error_type">404 Not Found</span>
+                <span class="products__list-error_title">
                     Oops... something went wrong. Contact technical support or try again later
                 </span>
             </div>
         `
-        productList.innerHTML = productInHTML;
+        productsList.innerHTML = productsInHTML;
         console.error(error);
     }
 
@@ -358,10 +349,7 @@ async function displayProducts() {
 displayCategories();
 displayProducts();
 
-
-
 // _________________________Email_Validation_______________________________
-
 
 function validEmailAddress(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

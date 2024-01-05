@@ -81,9 +81,8 @@
 }
 
 .newsletter {
-  position: relative;
-
   &__title {
+    text-align: center;
     margin: 0;
     margin-bottom: 15px;
     color: var(--white);
@@ -92,17 +91,13 @@
   }
 
   &__form {
-    height: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+    position: relative;
   }
 
   &__input {
     width: 100%;
     max-width: 250px;
-    padding: 18px;
+    padding: 15px;
     background: transparent;
     border: none;
     border-radius: 0;
@@ -168,5 +163,12 @@
       font-size: 35px;
       cursor: pointer;
     }
+
+  }
+
+  &__inputContainer {
+    display: flex;
+    align-items: start;
+    margin-bottom: 5px;
   }
 }
